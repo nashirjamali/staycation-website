@@ -1,28 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import propTypes from 'prop-types';
+/* eslint-disable react/jsx-no-target-blank */
+import React from "react";
+import { Link } from "react-router-dom";
+import propTypes from "prop-types";
 
 export default function Button(props) {
-  const className = [propTypes.className];
+  const className = [props.className];
+  if (props.isPrimary) className.push("btn-primary");
+  if (props.isLarge) className.push("btn-lg");
+  if (props.isSmall) className.push("btn-sm");
+  if (props.isBlock) className.push("btn-block");
+  if (props.hasShadow) className.push("btn-shadow");
 
-  if (props.isPrimary) className.push('btn-primary');
-  if (props.isSmall) className.push('btn-sm');
-  if (props.isLarge) className.push('btn-lg');
-  if (props.isBlock) className.push('btn-block');
-  if (props.hasShadow) className.push('btn-shadow');
-
-  const onClick = () => {
-    if (props.onClick) props.onClick();
+  const onclick = () => {
+    if (props.onclick) props.onclick();
   };
 
-  if (props.isDisabled || props.isLoading) {
-    if (props.isDisabled) className.push('disabled');
+  if (props.isDisabled || props.isLoadling) {
+    if (props.isDisabled) className.push("disabled");
+
     return (
-      <span className={className.join(' ')} style={props.style}>
-        {props.isLoading ? (
+      <span className={className.join(" ")} style={props.style}>
+        {props.isLoadling ? (
           <>
-            <span className="spinner-border spinner-border-sm mx-5"> Loading</span>
-            <span className="sr-only"></span>
+            <span className="spinner-border.spinner-border-sm.mx-5"></span>
+            <span className="sr-only">Loading...</span>
           </>
         ) : (
           props.children
@@ -31,15 +32,15 @@ export default function Button(props) {
     );
   }
 
-  if (props.type == 'link') {
+  if (props.type === "link") {
     if (props.isExternal) {
       return (
         <a
           href={props.href}
-          className={className.join(' ')}
+          className={className.join(" ")}
           style={props.style}
-          target={props.target == '_blank' ? '_blank' : undefined}
-          rel={props.target == '_blank' ? 'noopener noreferrer' : undefined}
+          target={props.target === "_blank" ? "_blank" : undefined}
+          rel={props.target === "_blank" ? "noopener noreferrer" : undefined}
         >
           {props.children}
         </a>
@@ -48,9 +49,9 @@ export default function Button(props) {
       return (
         <Link
           to={props.href}
-          className={className.join(' ')}
+          className={className.join(" ")}
           style={props.style}
-          onClick={onClick}
+          onClick={onclick}
         >
           {props.children}
         </Link>
@@ -60,10 +61,9 @@ export default function Button(props) {
 
   return (
     <Button
-      to={props.href}
-      className={className.join(' ')}
+      className={className.join(" ")}
       style={props.style}
-      onClick={onClick}
+      onClick={onclick}
     >
       {props.children}
     </Button>
@@ -71,13 +71,13 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-  type: propTypes.oneOf(['button', 'link']),
-  onClick: propTypes.func,
+  type: propTypes.oneOf(["button", "link"]),
+  onclick: propTypes.func,
+  href: propTypes.string,
   target: propTypes.string,
   className: propTypes.string,
   isDisabled: propTypes.bool,
-  isLoading: propTypes.bool,
-  isPrimary: propTypes.bool,
+  isLoadling: propTypes.bool,
   isSmall: propTypes.bool,
   isLarge: propTypes.bool,
   isBlock: propTypes.bool,
