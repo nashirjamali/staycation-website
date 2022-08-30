@@ -60,13 +60,13 @@ export default function Button(props) {
   }
 
   return (
-    <Button
+    <button
       className={className.join(" ")}
       style={props.style}
       onClick={onclick}
     >
       {props.children}
-    </Button>
+    </button>
   );
 }
 
