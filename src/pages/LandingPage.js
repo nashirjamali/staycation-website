@@ -23,7 +23,7 @@ export default class LandingPages extends Component {
           data={landingPage.mostPicked}
         />
         <Categories data={landingPage.categories} />
-        <Testimony />
+        <Testimony data={landingPage.testimonial} />
       </>
     );
   }
