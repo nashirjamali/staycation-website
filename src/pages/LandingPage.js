@@ -6,6 +6,7 @@ import Categories from "parts/Categories";
 
 import landingPage from "json/landingPage.json";
 import Testimony from "parts/Testimony";
+import Footer from "parts/Footer";
 
 export default class LandingPages extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -24,6 +25,7 @@ export default class LandingPages extends Component {
         />
         <Categories data={landingPage.categories} />
         <Testimony data={landingPage.testimonial} />
+        <Footer />
       </>
     );
   }
