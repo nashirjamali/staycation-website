@@ -5,6 +5,7 @@ import MostPicked from "parts/MostPicked";
 import Categories from "parts/Categories";
 
 import landingPage from "json/landingPage.json";
+import Testimony from "parts/Testimony";
 
 export default class LandingPages extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -22,6 +23,7 @@ export default class LandingPages extends Component {
           data={landingPage.mostPicked}
         />
         <Categories data={landingPage.categories} />
+        <Testimony />
       </>
     );
   }
