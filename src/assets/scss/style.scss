@@ -4,8 +4,8 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
- 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap');
 @import 'colorVariables';
 @import 'functions';
 @import 'variables';
@@ -46,6 +46,10 @@
 @import 'utilities';
 @import 'print';
 
+// a:hover {
+//   text-decoration: none;
+// }
+
 .brand-text-icon {
   font-size: 26px;
   font-weight: 500;
@@ -80,7 +84,7 @@ header {
             padding-left: 1rem;
             padding-right: 1rem;
             &:hover {
-              text-decoration: underline;
+              text-decoration: none;
             }
           }
         }
@@ -103,6 +107,17 @@ section {
   object-fit: contain;
   height: 100%;
   width: 100%;
+}
+
+.container-grid {
+  .item {
+    div {
+      height: 100%;
+    }
+  }
+  .tag {
+    max-height: 30px;
+  }
 }
 
 .card {
@@ -214,7 +229,7 @@ footer {
   border-top: 1px solid $gray-200;
   padding-top: 50px;
 
-  .brand-tag-line {
+  .brand-tagline {
     margin-top: 8px;
     color: $gray-500;
     font-weight: 300;
@@ -234,11 +249,9 @@ footer {
       }
     }
   }
-
   .copyrights {
     margin: 50px 0;
     font-weight: 300;
-    font-size: 0.875rem;
     color: $gray-500;
   }
 }
