@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import InputNumber from 'elements/Form/InputNumber';
+import InputDate from 'elements/Form/InputDate';
 
 export default function Example() {
   const [value, setValue] = useState(0);
 
   return (
-    <InputNumber
-      max={30}
+    <InputDate
       value={value}
-      name="value"
-      suffix=' hotel'
-      isSuffixPlural
       onChange={(e) => setValue(e.target.value)}
     />
   );
