@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
-import InputDate from 'elements/Form/InputDate';
+import React, { useState } from "react";
+import Breadcrumb from "elements/Breadcrumb";
 
 export default function Example() {
-  const [value, setValue] = useState(0);
+  const breadcrumbList = [
+    { pageTitle: "Home", pageHref: "" },
+    { pageTitle: "House Details", pageHref: "" },
+  ];
 
-  return (
-    <InputDate
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-    />
-  );
+  return <Breadcrumb data={breadcrumbList} />;
 }
