@@ -3,9 +3,6 @@ import { Fade } from 'react-awesome-reveal';
 
 import ImageHero from '../assets/images/img-hero.png';
 import ImageHeroFrame from '../assets/images/img-hero-frame.png';
-import IconCities from '../assets/images/icons/icon_cities.svg';
-import IconTraveler from '../assets/images/icons/icon_traveler.svg';
-import IconTreasure from '../assets/images/icons/icon_treasure.svg';
 import Button from 'elements/Button';
 import formatNumber from 'utils/formatNumber';
 
@@ -46,7 +43,7 @@ export default function Hero(props) {
                 <img
                   width={36}
                   height={36}
-                  src={IconTraveler}
+                  src="images/icons/icon_traveler.svg"
                   alt={`${formatNumber(props.data.travelers)} Travelers`}
                 />
                 <h6 className="mt-3">
@@ -60,7 +57,7 @@ export default function Hero(props) {
                 <img
                   width={36}
                   height={36}
-                  src={IconTreasure}
+                  src="images/icons/icon_treasure.svg"
                   alt={`${formatNumber(props.data.treasures)} Treasures`}
                 />
                 <h6 className="mt-3">
@@ -74,7 +71,7 @@ export default function Hero(props) {
                 <img
                   width={36}
                   height={36}
-                  src={IconCities}
+                  src="images/icons/icon_cities.svg"
                   alt={`${formatNumber(props.data.cities)} Cities`}
                 />
                 <h6 className="mt-3">
