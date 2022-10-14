@@ -8,16 +8,15 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
 import formatDate from "utils/formatDate";
-import iconCalendar from "assets/images/icons/icon_calendar.svg";
 
 export default function Date(props) {
   const { value, placeholder, name } = props;
   const [isShowed, setIsShowed] = useState(false);
 
-  const datePickerChange = (value) => {
+  const datePickerChange = (v) => {
     const target = {
       target: {
-        value: value.selection,
+        value: v.selection,
         name: name,
       },
     };
@@ -56,7 +55,7 @@ export default function Date(props) {
       <div className="input-group">
         <div className="input-group-prepend bg-gray-900">
           <span className="input-group-text">
-            <img src={iconCalendar} alt="icon calendar" />
+            <img src="/images/icons/icon_calendar.svg" alt="icon calendar" />
           </span>
         </div>
         <input
