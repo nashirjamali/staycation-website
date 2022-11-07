@@ -28,7 +28,6 @@ export default function InputFile({
           accept={accept}
           ref={refInputFile}
           name={name}
-          pattern={pattern}
           className="d-none"
           type="file"
           value={value}
