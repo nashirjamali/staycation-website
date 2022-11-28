@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-import "./index.scss";
+import './index.scss';
 
 export default function InputText({
   value,
@@ -16,13 +16,13 @@ export default function InputText({
   ...props
 }) {
   const [hasError, setHasError] = useState(false);
-  let pattern = "";
-  if (type === "email") {
+  let pattern = '';
+  if (type === 'email') {
     pattern = /^[^\s@]+@[^\s@].[^\s@]+$/;
   }
 
-  if (type === "tel") {
-    pattern = "[0-9]*";
+  if (type === 'tel') {
+    pattern = '[0-9]*';
   }
 
   const onChange = (e) => {
@@ -33,15 +33,15 @@ export default function InputText({
       },
     };
 
-    if (type === "email") {
+    if (type === 'email') {
       if (!pattern.test(e.target.value)) {
         setHasError(errorResponse);
       } else {
-        setHasError("");
+        setHasError('');
       }
     }
 
-    if (type == "tel") {
+    if (type == 'tel') {
       if (e.target.validity.valid) {
         props.onChange(target);
       }
@@ -51,7 +51,7 @@ export default function InputText({
   };
 
   return (
-    <div className={["input-text mb-3", outerClassName].join(" ")}>
+    <div className={['input-text mb-3', outerClassName].join(' ')}>
       <div className="input-group">
         {prepend && (
           <div className="input-group-prepend bg-gray-900">
@@ -62,7 +62,7 @@ export default function InputText({
           name={name}
           type={type}
           pattern={pattern}
-          className={["form-control", inputClassName].join(" ")}
+          className={['form-control', inputClassName].join(' ')}
           value={value}
           placeholder={placeholder}
           onChange={onChange}
@@ -79,10 +79,11 @@ export default function InputText({
 }
 
 InputText.defaultProps = {
-  type: "text",
-  pattern: "",
-  placeholder: "Please type here...",
-  errorResponse: "Please match the requested format.",
+  type: 'text',
+  pattern: '',
+  placeholder: 'Please type here...',
+  errorResponse: 'Please match the requested format.',
+  value: '',
 };
 
 InputText.propTypes = {

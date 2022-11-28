@@ -20,7 +20,7 @@ export default function Payment({ data, itemDetails, checkout, ...props }) {
             style={{ paddingRight: 80 }}
           >
             <Fade delay={300}>
-              <p className="col-5 border-right py-5">Transfer Pembayaran:</p>
+              <p className="mb-4">Transfer Pembayaran:</p>
               <p>Tax {tax}</p>
               <p>Sub total: ${subTotal}</p>
               <p>Total: ${grandTotal}</p>
