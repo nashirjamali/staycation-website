@@ -19,14 +19,14 @@ export default function BookingInformation({
                 <figure className="img-wrapper" style={{ height: 270 }}>
                   <img
                     className="img-cover"
-                    src={itemDetails.imageUrls[0].url}
-                    alt={itemDetails.name}
+                    src={`${process.env.REACT_APP_HOST}/${itemDetails.imageId[0].imageUrl}`}
+                    alt={itemDetails.title}
                   />
                 </figure>
                 <div className="row align-item-center">
                   <div className="col">
                     <div className="meta-wrapper">
-                      <h5>{itemDetails.name}</h5>
+                      <h5>{itemDetails.title}</h5>
                       <span className="text-gray-500">
                         {itemDetails.city}, {itemDetails.country}
                       </span>
