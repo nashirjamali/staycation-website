@@ -1,10 +1,10 @@
-import React from "react";
-import { Fade } from "react-awesome-reveal";
+import React from 'react';
+import { Fade } from 'react-awesome-reveal';
 
-import { InputText, InputFile } from "elements/Form";
+import { InputText, InputFile } from 'elements/Form';
 
-import logoBca from "assets/images/logo-bca.png";
-import logoMandiri from "assets/images/logo-mandiri.png";
+import logoBca from 'assets/images/logo-bca.png';
+import logoMandiri from 'assets/images/logo-mandiri.png';
 
 export default function Payment({ data, itemDetails, checkout, ...props }) {
   const tax = 10;
@@ -16,7 +16,7 @@ export default function Payment({ data, itemDetails, checkout, ...props }) {
       <div className="container" style={{ marginBottom: 30 }}>
         <div className="row justify-content-center align-items-center">
           <div
-            className="col-5 border-right py-5"
+            className="col-12 col-lg-5 border-right py-lg-5 mb-5 mb-lg-0"
             style={{ paddingRight: 80 }}
           >
             <Fade delay={300}>
@@ -24,9 +24,9 @@ export default function Payment({ data, itemDetails, checkout, ...props }) {
               <p>Tax {tax}</p>
               <p>Sub total: ${subTotal}</p>
               <p>Total: ${grandTotal}</p>
-              <div className="row mt-4">
+              <div className="row mt-4 px-4 px-lg-0 ">
                 <div className="row mt-4">
-                  <div className="col-3 text-right">
+                  <div className="col-4 col-lg-3 text-right">
                     <img src={logoBca} alt="bank central asia" width="60" />
                   </div>
                   <div className="col">
@@ -39,7 +39,7 @@ export default function Payment({ data, itemDetails, checkout, ...props }) {
                 </div>
 
                 <div className="row">
-                  <div className="col-3 text-right">
+                  <div className="col-4 col-lg-3 text-right">
                     <img src={logoMandiri} />
                   </div>
                   <div className="col">
@@ -53,7 +53,7 @@ export default function Payment({ data, itemDetails, checkout, ...props }) {
               </div>
             </Fade>
           </div>
-          <div className="col-5 py-5" style={{ paddingLeft: 80 }}>
+          <div className="col-12 col-lg-5 py-lg-5">
             <Fade delay={600}>
               <label htmlFor="proofPayment">Upload Bukti Transfer</label>
               <InputFile

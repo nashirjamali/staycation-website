@@ -5,6 +5,7 @@ import LandingPage from 'pages/LandingPage';
 import Example from 'pages/Example';
 import DetailPage from 'pages/DetailsPage';
 import Checkout from 'pages/Checkout';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (

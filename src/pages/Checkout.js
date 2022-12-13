@@ -81,7 +81,7 @@ class Checkout extends Component {
             className="row align-items-center justify-content-center text-center"
             style={{ height: '100vh' }}
           >
-            <div className="col-3">
+            <div className="col-lg-3 col-12">
               Pilih kamar dulu
               <div>
                 <Button className="btn mt-5" type="link" href="/" isLight>
